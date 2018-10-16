@@ -1,0 +1,78 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="CSS/style_generacionXML.css">
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<script type="text/javascript" src="node_modules/simple-excel-js/src/simple-excel.js"></script>
+		
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	    <meta charset="UTF-8">
+
+	</head>
+
+	<body>
+
+		<div class="sidenav">
+
+		  <a href="index.html" id="a"><i class="material-icons">library_books</i>&nbsp;Gestión de base</a>
+		  <a href="#" id="b" class="actual"><i class="material-icons">insert_drive_file</i>&nbsp;Certificados<div class="triangulo"></div></a>
+		  <a href="#clients" id="c"><i class="material-icons">edit</i>&nbsp;Firma electrónica</a>
+		  <a href="#contact" id="d"><i class="material-icons">arrow_back</i>&nbsp;Salir</a>
+		
+		</div>
+
+		<div class="main">
+
+			<div id="archivero">
+				
+				<center><h1>Generador de Certificados</h1></center>
+
+				<ol>
+				  <li>Elegir archivo en formato CSV de los alumnos.</li>
+				  <li>Validar que los datos sean correctos.</li>
+				  <li>Generar certificados en formato XML.</li>
+				</ol> 
+				<br>
+				<br>
+		        <center>
+		        	<input type="file" name="fileInputCSV" id="fileInputCSV" onchange="getName()"/>
+					<label for="fileInputCSV" id="labelin"><i class="material-icons">cloud_upload</i>&nbsp;Elegir archivo</label>
+		        </center>
+
+		        <br/>
+
+		        <center><button id="fileExport"><i class="material-icons">check_circle</i>&nbsp;Generar XML</button></center>
+
+		        <table id="result"></table>
+
+	        </div>
+
+			<h2>Copyright 2015 - 2018 Loyalty Consultores Jurídicos</h2>
+		</div>
+
+		<script type="text/javascript" src="JS/csvRead.js"></script>
+		<script type="text/javascript">
+
+			function getName(){
+
+				var fullPath = document.getElementById('fileInputCSV').value;
+				if (fullPath) {
+				    var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+				    var filename = fullPath.substring(startIndex);
+				    if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+				        filename = filename.substring(1);
+				    }
+				    document.getElementById('labelin').innerHTML = "<i class='material-icons'>cloud_upload</i>&nbsp;"+filename;
+				    document.getElementById('fileExport').style.background = "#1b5e20";
+				}
+
+			}
+					
+		</script>
+
+	</body>
+
+</html>
