@@ -20,7 +20,7 @@ body{
     top: 0;
     left: 0;
     overflow-x: hidden;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 .sidenav a {
     padding: 15px 8px 6px 10px;
@@ -88,15 +88,15 @@ i {
 }
 #archivero{
 	margin-top: 5%;
-	margin-left: 10%;
+	margin-left: 15%;
 	width: 70%;
-	height: 65%;
+	height: 70%;
 	border-radius: 5px;
 	padding-top: 80px;
 	background: rgba(238,238,238,0.9);
 }
 #archivero ol{
-	margin-left: 23%;
+	margin-left: 18%;
 }
 #fileInputCSV{
 	width: 0.1px;
@@ -107,7 +107,7 @@ i {
 	z-index: -1;
 }
 label{
-    font-size: 25px;
+    font-size: 22px;
     width: 60%;
     color: #f0f0f0;
     background: #263238;
@@ -122,7 +122,7 @@ label:hover{
 	cursor: pointer;
 }
 #fileExport{
-    font-size: 25px;
+    font-size: 22px;
     width: 60%;
     color: #f0f0f0;
     background: #bf360c;
@@ -131,9 +131,10 @@ label:hover{
     padding-top: 15px;
     padding-bottom: 15px;
     border-radius: 5px;
+    margin-top: 10px;
 }
 h1{
-	margin-bottom: 80px;
+	margin-bottom: 50px;
 	color: #263238;
 	font-size: 35px;
 	/*color: #cfd8dc;*/

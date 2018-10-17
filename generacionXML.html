@@ -6,7 +6,6 @@
 	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-		<script type="text/javascript" src="node_modules/simple-excel-js/src/simple-excel.js"></script>
 		
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	    <meta charset="UTF-8">
@@ -35,16 +34,14 @@
 				  <li>Validar que los datos sean correctos.</li>
 				  <li>Generar certificados en formato XML.</li>
 				</ol> 
-				<br>
-				<br>
+				<br/>
+				<br/>
 		        <center>
-		        	<input type="file" name="fileInputCSV" id="fileInputCSV" onchange="getName()"/>
+		        	<input type="file" name="fileInputCSV" id="fileInputCSV"/>
 					<label for="fileInputCSV" id="labelin"><i class="material-icons">cloud_upload</i>&nbsp;Elegir archivo</label>
 		        </center>
 
-		        <br/>
-
-		        <center><button id="fileExport"><i class="material-icons">check_circle</i>&nbsp;Generar XML</button></center>
+		        <center><button id="fileExport" onclick="leer();"><i class="material-icons">highlight_off</i>&nbsp;Archivo no seleccionado</button></center>
 
 		        <table id="result"></table>
 
@@ -53,25 +50,7 @@
 			<h2>Copyright 2015 - 2018 Loyalty Consultores Jurídicos</h2>
 		</div>
 
-		<script type="text/javascript" src="JS/csvRead.js"></script>
-		<script type="text/javascript">
-
-			function getName(){
-
-				var fullPath = document.getElementById('fileInputCSV').value;
-				if (fullPath) {
-				    var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
-				    var filename = fullPath.substring(startIndex);
-				    if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
-				        filename = filename.substring(1);
-				    }
-				    document.getElementById('labelin').innerHTML = "<i class='material-icons'>cloud_upload</i>&nbsp;"+filename;
-				    document.getElementById('fileExport').style.background = "#1b5e20";
-				}
-
-			}
-					
-		</script>
+		<script type="text/javascript" src="csvRead.js"></script>
 
 	</body>
 

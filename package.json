@@ -13,7 +13,12 @@
   "author": "derdavid",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^3.0.0",
     "electron-packager": "^12.1.2"
+  },
+  "dependencies": {
+    "csvtojson": "^2.0.8",
+    "electron": "^3.0.4",
+    "electron-reload": "^1.2.5",
+    "fs": "0.0.1-security"
   }
 }
