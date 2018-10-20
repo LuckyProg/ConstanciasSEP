@@ -16,8 +16,8 @@
 
 		<div class="sidenav">
 
-		  <a href="index.html" id="a"><i class="material-icons">library_books</i>&nbsp;Gestión de base</a>
-		  <a href="#" id="b" class="actual"><i class="material-icons">insert_drive_file</i>&nbsp;Certificados<div class="triangulo"></div></a>
+		  <a href="index.html" id="a"><i class="material-icons">library_books</i>&nbsp;Info. de la institucion</a>
+		  <a href="#" id="b" class="actual"><i class="material-icons">insert_drive_file</i>&nbsp;Certificados</a>
 		  <a href="#clients" id="c"><i class="material-icons">edit</i>&nbsp;Firma electrónica</a>
 		  <a href="#contact" id="d"><i class="material-icons">arrow_back</i>&nbsp;Salir</a>
 		
@@ -25,15 +25,19 @@
 
 		<div class="main">
 
+			<br/>
+			<center><h1>Generador de Certificados</h1></center>
+			<br/>
 			<div id="archivero">
-				
-				<center><h1>Generador de Certificados</h1></center>
-
+				<h2>Procedimiento:</h2>
+				<br/>
 				<ol>
 				  <li>Elegir archivo en formato CSV de los alumnos.</li>
 				  <li>Validar que los datos sean correctos.</li>
-				  <li>Generar certificados en formato XML.</li>
+				  <li>Asociar archivo de asignaturas.</li>
+				  <li>Confirmar para generar certificado en formato XML.</li>
 				</ol> 
+				<br/>
 				<br/>
 				<br/>
 		        <center>
@@ -41,13 +45,13 @@
 					<label for="fileInputCSV" id="labelin"><i class="material-icons">cloud_upload</i>&nbsp;Elegir archivo</label>
 		        </center>
 
-		        <center><button id="fileExport" onclick="leer();"><i class="material-icons">highlight_off</i>&nbsp;Archivo no seleccionado</button></center>
+		        <center><button id="fileExport" onclick="leer();" disabled><i class="material-icons">highlight_off</i>&nbsp;Archivo no seleccionado</button></center>
 
 		        <table id="result"></table>
 
 	        </div>
 
-			<h2>Copyright 2015 - 2018 Loyalty Consultores Jurídicos</h2>
+			<h3>Copyright 2015 - 2018 Loyalty Consultores Jurídicos</h3>
 		</div>
 
 		<script type="text/javascript" src="csvRead.js"></script>

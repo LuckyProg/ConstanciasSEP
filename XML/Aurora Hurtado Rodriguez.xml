@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<Dec version='1.0' tipoCertificado='5' folioControl='517816281' sello='#' certificadoResponsable='#' noCertificadoResponsable='#' xmlns='https://www.siged.sep.gob.mx/certificados/'>
+    <Ipes idNombreInstitucion='vda6bahs8j' idCampus='dvahjds6bj8' idEntidadfederativa='bdjhada767'>
+        <Responsable nombre='#' primerApellido='#' segundoApellido='#' curp='#' idCargo='dvdja6687'/>
+    </Ipes>
+    <Rvoe numero='#' fechaExpedicion='2018-01-10T00:00:00'/>
+    <Carrera idCarrera='Psicologia' idTipoPeriodo='undefined' clavePlan='Plan2015'/>
+    <Alumno numeroControl='40' curp='DHSMAH362292' nombre='Aurora' primerApellido='Hurtado' segundoApellido='Rodriguez' idGenero='femenino' fechaNacimiento='1998-09-26T00:00:00'/>
+    <Expedicion idTipoCertificado='#' fecha='1999-09-18T11:00:00' idLugarExpedicion='#'/>
+    <Asignaturas total='#' asignadas='#' promedio='#'>
+        <Asignatura idAsignatura='#' ciclo='2012-4' calificacion='#' idObservaciones='#'/>
+        <Asignatura idAsignatura='#' ciclo='2012-4' calificacion='#' idObservaciones='#'/>
+        <Asignatura idAsignatura='#' ciclo='2012-4' calificacion='#' idObservaciones='#'/>
+    </Asignaturas>
+</Dec>

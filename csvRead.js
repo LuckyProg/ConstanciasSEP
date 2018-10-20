@@ -5,6 +5,7 @@ var fs = require('fs');
 const {dialog} = require('electron').remote;
 
 document.getElementById('fileInputCSV').focus();
+
 var fileInputCSV = document.getElementById('fileInputCSV'); 
 var file;
                   
@@ -20,6 +21,7 @@ fileInputCSV.addEventListener('change', function (e) {
     if(!ext.localeCompare(file.name.substring(file.name.length-3, file.name.length))){
         document.getElementById('fileExport').innerHTML = "<i class='material-icons'>check_circle</i>&nbsp;Generar XML</button>";
         document.getElementById('fileExport').style.background = "#1b5e20";
+        document.getElementById('fileExport').disabled = false;
     }
     else{
         const dialogOptions = {type: 'info', buttons: ['OK', 'Cancel'], message: 'Archivos XML generados correctamente.'};
@@ -39,8 +41,63 @@ function leer(){
     .fromFile(file.path)
     .then((jsonObj)=>{
         alumnos = jsonObj;
-        generar();
+        tabla();
     });
+
+}
+
+function tabla(){
+
+    var datos = "";
+
+    for(x=0;x<alumnos.length;x++){
+
+        datos = datos+"<tr>"+"<td><input type='checkbox'></td>";
+        datos = datos+"<td>"+alumnos[x].numeroControl+"</td>";
+        datos = datos+"<td>"+alumnos[x].curp+"</td>";
+        datos = datos+"<td>"+alumnos[x].nombre+"</td>";
+        datos = datos+"<td>"+alumnos[x].primerApellido+"</td>";
+        datos = datos+"<td>"+alumnos[x].segundoApellido+"</td>";
+        datos = datos+"<td>"+alumnos[x].idGenero+"</td>";
+        datos = datos+"<td>"+alumnos[x].fechaNacimiento+"</td>";
+        datos = datos+"<td id='asig'><input type='file' class='fileInput' id='fileInput"+x+"' onchange=\"ponerNombre('labe"+x+"','fileInput"+x+"')\";/><label for='fileInput"+x+"' id='labe"+x+"' class='labelin2'><i class='material-icons'>cloud_upload</i>&nbsp;Elegir archivo</label></td>";
+        datos = datos+"<td id='asig'><button id='confi'>Confirmar</button></td>"+"</tr>";
+
+    }
+
+    document.getElementById('archivero').innerHTML = 
+    "<center>"+
+    "   <table>"+
+    "       <tr>"+
+    "           <th></th>"+
+    "           <th>numeroControl</th>"+
+    "           <th>curp</th>"+
+    "           <th>nombre</th>"+
+    "           <th>primerApellido</th>"+
+    "           <th>segundoApellido</th>"+
+    "           <th>idGenero</th>"+
+    "           <th>fechaNacimiento</th>"+
+    "           <th>Asignaturas</th>"+
+    "           <th></th>"+
+    "       </tr>"+
+    datos+
+    "   </table>"
+    "</center>";
+
+}
+
+function ponerNombre(labe, f){
+
+    var fullPath = document.getElementById(f).value;
+    if (fullPath) {
+        var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+        var filename = fullPath.substring(startIndex);
+        if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+            filename = filename.substring(1);
+        }
+        document.getElementById(labe).style.background = "#e8f5e9";
+        document.getElementById(labe).innerHTML = "<i class='material-icons'>insert_drive_file</i>&nbsp;"+filename;
+    }
 
 }
 

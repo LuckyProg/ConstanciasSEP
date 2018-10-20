@@ -7,6 +7,7 @@
     -khtml-user-select: none;
     -ms-user-select:none;
 }
+html, body {margin: 0; height: 100%; overflow: hidden}
 body{
 	background: #3c719c;
 }
@@ -14,7 +15,7 @@ body{
 .sidenav {
 	background: #37474f;
     height: 100%;
-    width: 185px;
+    width: 200px;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -84,19 +85,25 @@ i {
 .main {
     margin-left: 180px; /* Same as the width of the sidenav */
     font-size: 25px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
+}
+h1{
+    color: #eceff1;
+    font-size: 35px;
+    /*color: #cfd8dc;*/
 }
 #archivero{
-	margin-top: 5%;
-	margin-left: 15%;
-	width: 70%;
-	height: 70%;
-	border-radius: 5px;
-	padding-top: 80px;
+	height: 77%;
+	padding-top: 30px;
 	background: rgba(238,238,238,0.9);
+    overflow-y: scroll;
+}
+#archivero h2{
+    font-size: 28px;
+    margin-top: 3%;
+    margin-left: 26%;
 }
 #archivero ol{
-	margin-left: 18%;
+	margin-left: 28%;
 }
 #fileInputCSV{
 	width: 0.1px;
@@ -106,9 +113,9 @@ i {
 	position: absolute;
 	z-index: -1;
 }
-label{
+#labelin{
     font-size: 22px;
-    width: 60%;
+    width: 45%;
     color: #f0f0f0;
     background: #263238;
     display: inline-block;
@@ -117,13 +124,13 @@ label{
     padding-bottom: 15px;
     border-radius: 5px;
 }
-label:hover{
+#labelin:hover{
 	background: #37474f;
 	cursor: pointer;
 }
 #fileExport{
     font-size: 22px;
-    width: 60%;
+    width: 45%;
     color: #f0f0f0;
     background: #bf360c;
     display: inline-block;
@@ -133,21 +140,66 @@ label:hover{
     border-radius: 5px;
     margin-top: 10px;
 }
-h1{
-	margin-bottom: 50px;
-	color: #263238;
-	font-size: 35px;
-	/*color: #cfd8dc;*/
-}
 table{
-	position: absolute;
-	top: 22%;
-	margin-left: 5%;
+    margin-bottom: 30px;
 }
-h2{
+table, th, td {
+    border: 1px solid #0f0f0f;
+    border-collapse: collapse;
+    padding: 5px;
+}
+th, td {
+    text-align: center;
+    padding: 5px;
+}
+th{
+    background: #3c719c;
+    color: #f0f0f0;
+}
+td{
+    background: #fff;
+    color: #0f0f0f;
+}
+#asig{
+    padding: 0px;
+}
+.fileInput{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.labelin2{
+    margin: 0px; 
+    width: 92%;
+    padding: 5px;
+    font-size: 14px;
+    color: #0f0f0f;
+    background: #ffebee;
+    display: inline-block;
+    cursor: pointer;
+}
+#labelin2:hover{
+    background: #ffcdd2;
+    cursor: pointer;
+}
+#confi{
+    margin-left: 3px;
+    margin-right: 3px; 
+    padding: 5px;
+    font-size: 14px;
+    color: #0f0f0f;
+    display: inline-block;
+    cursor: pointer;
+    background: #e3f2fd;
+    border: solid .5px #0f0f0f;
+}
+h3{
 	position: absolute;
 	bottom: 10px;
 	right: 10px;
-	color: #78909c;
+	color: #eceff1;
 	font-size: 12px;
 }

@@ -8,13 +8,13 @@
     -ms-user-select:none;
 }
 body{
-	background: #eeeeee;
+	background: #3c719c;
 }
 /*Menu*/
 .sidenav {
 	background: #37474f;
     height: 100%;
-    width: 185px;
+    width: 200px;
     position: fixed;
     z-index: 1;
     top: 0;
