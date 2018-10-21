@@ -72,10 +72,10 @@ body{
 	background: linear-gradient(to right, #8d6e63, #37474f);
 }
 .sidenav #d{
-	border-left: 3px solid #ffab40;
+	border-left: 3px solid #f57f17;
 }
 .sidenav #d:hover{
-	background: linear-gradient(to right, #ffab40, #37474f);
+	background: linear-gradient(to right, #f57f17, #37474f);
 }
 i {
     height: 27px;
@@ -88,11 +88,11 @@ i {
 }
 h1{
     color: #eceff1;
-    font-size: 35px;
+    font-size: 30px;
     /*color: #cfd8dc;*/
 }
 #archivero{
-	height: 77%;
+	height: 78%;
 	padding-top: 30px;
 	background: rgba(238,238,238,0.9);
     overflow-y: scroll;

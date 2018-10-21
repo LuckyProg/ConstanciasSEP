@@ -1,0 +1,65 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="CSS/style_conf.css">
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	    <meta charset="UTF-8">
+
+	</head>
+
+	<body>
+
+		<div class="sidenav">
+		  <a href="gestion.html" id="a"><i class="material-icons">library_books</i>&nbsp;Gestion de Archivos</a>
+		  <a href="generacionXML.html" id="b"><i class="material-icons">insert_drive_file</i>&nbsp;Certificados</a>
+		  <a href="#clients" id="c"><i class="material-icons">edit</i>&nbsp;Firma electrónica</a>
+		  <a href="#" id="d" class="actual"><i class="material-icons">settings</i>&nbsp;Configuracion</a>
+		</div>
+
+		<div class="main">
+
+			<br/>
+			<center><h1>Configuracion</h1></center>
+			<br/>
+			<div id="archivero">
+
+				<br/><br/><br/>
+				<ul>
+					<li>
+						Carpeta de archivos de alumnos:&nbsp;
+			        	<input type="file" name="csvAlumnos" id="csvAlumnos" class="fileInput" webkitdirectory directory/>
+						<label for="csvAlumnos" id="lAlumnos" class="labelin"><i class="material-icons">cloud_upload</i>&nbsp;Elegir carpeta</label>
+					</li>
+					<br/>
+					<li>
+						Carpeta de archivos de asignaturas:&nbsp;
+			        	<input type="file" name="csvAsignaturas" id="csvAsignaturas" class="fileInput" webkitdirectory directory/>
+						<label for="csvAsignaturas" id="lAsignaturas" class="labelin"><i class="material-icons">cloud_upload</i>&nbsp;Elegir carpeta</label>
+					</li>
+					<br/>
+					<li>
+						Carpeta de generacion de xml:&nbsp;
+			        	<input type="file" name="xml" id="xml" class="fileInput" webkitdirectory directory/>
+						<label for="xml" id="lxml" class="labelin"><i class="material-icons">cloud_upload</i>&nbsp;Elegir carpeta</label>
+					</li>
+		        </ul>
+		        <br/><br/><br/>
+		        <center>
+		        <button onclick="resetear();" id="reset">Resetear</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick="guardar();" id="guardar">Guardar</button>
+		    	</center>
+
+			</div>
+
+			<h3>Copyright 2015 - 2018 Loyalty Consultores Jurídicos</h3>
+
+		</div>
+
+		<script type="text/javascript" src="JS/confi.js"></script>
+
+	</body>
+
+</html>

@@ -1,0 +1,155 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select:none;
+}
+html, body {margin: 0; height: 100%; overflow: hidden}
+body{
+    background: #3c719c;
+}
+/*Menu*/
+.sidenav {
+    background: #37474f;
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 40px;
+}
+.sidenav a {
+    padding: 15px 8px 6px 10px;
+    width: 100%;
+    height: 35px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #b0bec5;
+    display: block;
+    -webkit-transition: background 2s; /* For Safari 3.1 to 6.0 */
+    transition: background 2s;
+}
+.sidenav .actual{
+    color: #eceff1;
+}
+.sidenav .actual .triangulo{
+     width: 0; 
+     height: 0; 
+     position: relative;
+     margin-left: 155px;
+     margin-top: -26px;
+     border-right: 20px solid #3c719c;
+     border-top: 10px solid transparent;
+     border-bottom: 10px solid transparent; 
+}
+.sidenav #a{
+    border-left: 3px solid #4caf50;  
+    /*-webkit-transition: background 1s ease-out;  
+    -moz-transition: background 1s ease-out;  
+    -o-transition: background 1s ease-out;  
+    transition: background 1s ease-out;  
+    background-position:200px;  */
+}
+.sidenav #a:hover{
+    background: linear-gradient(to right, #4caf50, #37474f);
+    /*background-position:0px;*/  
+}
+.sidenav #b{
+    border-left: 3px solid #00838f;
+}
+.sidenav #b:hover{
+    background: linear-gradient(to right, #00838f, #37474f);
+}
+.sidenav #c{
+    border-left: 3px solid #8d6e63;
+}
+.sidenav #c:hover{
+    background: linear-gradient(to right, #8d6e63, #37474f);
+}
+.sidenav #d{
+    border-left: 3px solid #f57f17;
+}
+.sidenav #d:hover{
+    background: linear-gradient(to right, #f57f17, #37474f);
+}
+i {
+    height: 27px;
+    vertical-align: middle;
+}
+/*Contenido*/
+.main {
+    margin-left: 180px; /* Same as the width of the sidenav */
+    font-size: 25px; /* Increased text to enable scrolling */
+}
+h1{
+    color: #eceff1;
+    font-size: 30px;
+    /*color: #cfd8dc;*/
+}
+#archivero{
+    height: 78%;
+    padding-top: 30px;
+    background: rgba(238,238,238,0.9);
+    overflow-y: scroll;
+}
+#archivero ul{
+    margin-left: 21%;
+    font-size: 22px;
+}
+.fileInput{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.labelin{
+    font-size: 20px;
+    color: #f0f0f0;
+    background: #263238;
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+.labelin:hover{
+    background: #37474f;
+    cursor: pointer;
+}
+button{
+    width: 30%;
+    font-size: 20px;
+    color: #f0f0f0;
+    background: #263238;
+    display: inline-block;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+}
+button:hover{
+    background: #37474f;
+    cursor: pointer;
+}
+#reset{
+    color: #ffab91;
+}
+#guardar{
+    color: #a5d6a7;
+}
+h3{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #eceff1;
+    font-size: 12px;
+}

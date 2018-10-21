@@ -12,17 +12,15 @@
   "author": "LuckyProg",
   "license": "ISC",
   "devDependencies": {
-    "electron-packager": "^12.1.2"
+    "electron": "^3.0.4",
+    "electron-builder": "^20.28.4"
   },
   "dependencies": {
     "csvtojson": "^2.0.8",
+    "electron-json-storage": "^4.1.4",
     "electron-reload": "^1.2.5",
     "fs": "0.0.1-security",
     "js2xmlparser": "^3.0.0"
-  },
-  "devDependencies": {
-    "electron": "^3.0.4",
-    "electron-builder": "^20.28.4"
   },
   "build": {
     "appId": "your.id",
