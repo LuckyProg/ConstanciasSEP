@@ -28,25 +28,43 @@
 			<center><h1>Generador de Certificados</h1></center>
 			<br/>
 			<div id="archivero">
-				<h2>Procedimiento:</h2>
-				<br/>
-				<ol>
-				  <li>Elegir archivo en formato CSV de los alumnos.</li>
-				  <li>Validar que los datos sean correctos.</li>
-				  <li>Asociar archivo de asignaturas.</li>
-				  <li>Confirmar para generar certificado en formato XML.</li>
-				</ol> 
-				<br/>
-				<br/>
-				<br/>
+				<div id="institucion">
+					<br/>
+					<h2>Informacion de la Institucion:</h2>
+					<br/>
+					<ul>
+					  <li>- ID Nombre institucion: 
+					  	<input type="text" id="idNombreInstitucion" onchange="actualizar('idNombreInstitucion', true);" /></li>
+					  <li>- ID Campus: 
+					  	<input type="text" id="idCampus" onchange="actualizar('idCampus', true);"/></li>
+					  <li>- ID Entidad federativa: 
+					  	<input type="text" id="idEntidadFederativa" onchange="actualizar('idEntidadFederativa', true);"/></li>
+					  <li>- ID Lugar de expedicion: 
+					  	<input type="text" id="idLugarExpedicion" onchange="actualizar('idLugarExpedicion', true);"/></li>
+					</ul>
+				</div>
+				<div id="responsable">
+					<br/>
+					<h2>Responsable:</h2>
+					<br/> 
+					<ul>
+					  <li>- Nombre: 
+					  	<input type="text" id="nombre" onchange="actualizar('nombre', false);"/></li>
+					  <li>- Primer apellido: 
+					  	<input type="text" id="primerApellido" onchange="actualizar('primerApellido', false);"/></li>
+					  <li>- Segundo apellido: 
+					  	<input type="text" id="segundoApellido" onchange="actualizar('segundoApellido', false);"/></li>
+					  <li>- Curp: 
+					  	<input type="text" id="curp" onchange="actualizar('curp', false);"/></li>
+					  <li>- ID Cargo: 
+					  	<input type="text" id="idCargo" onchange="actualizar('idCargo', false);"/></li>
+					</ul> 
+				</div>
+				<br/><br/><br/><br>
 		        <center>
-		        	<input type="file" name="fileInputCSV" id="fileInputCSV"/>
-					<label for="fileInputCSV" id="labelin"><i class="material-icons">cloud_upload</i>&nbsp;Elegir archivo</label>
+		        	<select id="alumnos"></select>
 		        </center>
-
-		        <center><button id="fileExport" onclick="leer();" disabled><i class="material-icons">highlight_off</i>&nbsp;Archivo no seleccionado</button></center>
-
-		        <table id="result"></table>
+		        <center><button id="generar" onclick="leer();" disabled><i class="material-icons">highlight_off</i>&nbsp;Archivo no seleccionado</button></center>
 
 	        </div>
 

@@ -112,7 +112,7 @@ h1{
 .labelin{
     font-size: 20px;
     color: #f0f0f0;
-    background: #263238;
+    background: #37474f;
     display: inline-block;
     cursor: pointer;
     padding: 5px;
@@ -122,14 +122,14 @@ h1{
     text-align: center;
 }
 .labelin:hover{
-    background: #37474f;
+    background: #263238;
     cursor: pointer;
 }
 button{
     width: 30%;
     font-size: 20px;
     color: #f0f0f0;
-    background: #263238;
+    background: #37474f;
     display: inline-block;
     cursor: pointer;
     padding: 8px;
@@ -137,7 +137,7 @@ button{
     text-align: center;
 }
 button:hover{
-    background: #37474f;
+    background: #263238;
     cursor: pointer;
 }
 #reset{

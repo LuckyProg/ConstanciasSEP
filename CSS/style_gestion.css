@@ -123,6 +123,7 @@ h1{
     margin-bottom: 12px;
     margin-left: 5%;
     margin-top: 50px;
+    border-radius: 5px;
 }
 table {
     border-collapse: collapse;
@@ -133,7 +134,7 @@ table {
     margin-bottom: 60px;
 }
 table th, table td {
-    text-align: left;
+    text-align: center;
     padding: 12px;
 }
 table tr {
@@ -146,7 +147,7 @@ table tr.header{
 }
 input{
     margin: 0px;
-    width: 100%;
+    width: 113%;
     font-size: 15px;
     padding: 10px;
 }
@@ -162,16 +163,19 @@ button{
 #agregar{
     color: #0f0f0f;
     background: #f9fbe7;
+    margin-right: 20%;
+    width: 40%;
 }
 #mod{
     color: #0f0f0f;
     background: #e1f5fe;
-    width: 50%;
+    width: 40%;
+    margin-left: 20%;
 }
 #eli{
     color: #0f0f0f;
     background: #ffcdd2;
-    width: 50%;
+    width: 40%;
 }
 h3{
     position: absolute;

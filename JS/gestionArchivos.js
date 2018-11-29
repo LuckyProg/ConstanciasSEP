@@ -9,7 +9,6 @@ var rutas;
 var csvAlumnos;
 var csvAsignaturas;
 var xml;
-var r1 = false, r2 = false, r3 = false;
   
 storage.has('rutas', function(error, hasKey) {
   if (error) console.log(error);
@@ -36,8 +35,8 @@ storage.get('rutas', function(error, data) {
             archalum = archalum + 
             "<tr>"+
                 "<td>"+rutas.alumnos[x]+".csv</td>"+
-                "<td id='especial'><button id='mod' onclick='editarAlumnos("+x+");'><i class='material-icons'>create</i>&nbsp;Modificar</button>"+
-                "<button id='eli' onclick='eliminarAlumnos("+x+");'><i class='material-icons'>restore_from_trash</i>&nbsp;Eliminar</button></td>"+
+                "<td id='especial'><button id='mod' onclick='editarAlumnos("+x+");'><i class='material-icons'>create</i></button>"+
+                "<button id='eli' onclick='eliminarAlumnos("+x+");'><i class='material-icons'>restore_from_trash</i></button></td>"+
             "</tr>";
 
         }
@@ -49,7 +48,7 @@ storage.get('rutas', function(error, data) {
         "</tr>"+
         "<tr>"+
             "<td id='especial'><input type='text' id='nuevoAlum' placeholder='Nuevo archivo'></td>"+
-            "<td id='especial'><button id='agregar' onclick='agregarAlumnos();'><i class='material-icons'>add</i>&nbsp;Agregar</button></td>"+
+            "<td id='especial'><button id='agregar' onclick='agregarAlumnos();'><i class='material-icons'>add</i></button></td>"+
         "</tr>"+archalum;
 
         var archasig = "";
@@ -58,8 +57,8 @@ storage.get('rutas', function(error, data) {
             archasig = archasig + 
             "<tr>"+
                 "<td>"+rutas.asignaturas[x]+".csv</td>"+
-                "<td id='especial'><button id='mod' onclick='editarAsignaturas("+x+");'><i class='material-icons'>create</i>&nbsp;Modificar</button>"+
-                "<button id='eli' onclick='eliminarAsignaturas("+x+");'><i class='material-icons'>restore_from_trash</i>&nbsp;Eliminar</button></td>"+
+                "<td id='especial'><button id='mod' onclick='editarAsignaturas("+x+");'><i class='material-icons'>create</i></button>"+
+                "<button id='eli' onclick='eliminarAsignaturas("+x+");'><i class='material-icons'>restore_from_trash</i></button></td>"+
             "</tr>";
 
         }
@@ -71,7 +70,7 @@ storage.get('rutas', function(error, data) {
         "</tr>"+
         "<tr>"+
             "<td id='especial'><input type='text' id='nuevaAsig' placeholder='Nuevo archivo'></td>"+
-            "<td id='especial'><button id='agregar' onclick='agregarAsignaturas();'><i class='material-icons'>add</i>&nbsp;Agregar</button></td>"+
+            "<td id='especial'><button id='agregar' onclick='agregarAsignaturas();'><i class='material-icons'>add</i></button></td>"+
         "</tr>"+archasig;
 
     }
@@ -80,11 +79,11 @@ storage.get('rutas', function(error, data) {
 function agregarAlumnos(){
 
     var nomar = document.getElementById('nuevoAlum').value;
-    rutas.alumnos.push(nomar);
+    rutas.alumnos.unshift(nomar);
     storage.set('rutas', rutas, function(error) {
       if (error) console.log(error);
     });
-    var content = 'idCarrera,IdTipoPeriodo,clavePlan,numeroControl,curp,nombre,primerApellido,segundoApellido,idGenero,fechaNacimiento\n'+
+    var content = 'idCarrera,idTipoPeriodo,clavePlan,numeroControl,curp,nombre,primerApellido,segundoApellido,idGenero,fechaNacimiento\n'+
                 ' , , , , , , , , , ';
     fs.writeFileSync(rutas.csvAlumnos+'/'+nomar+'.csv', content, 'utf-8');
     location.replace("gestion.html");
@@ -133,7 +132,7 @@ function buscarAlumnos() {
 function agregarAsignaturas(){
 
     var nomas = document.getElementById('nuevaAsig').value;
-    rutas.asignaturas.push(nomas);
+    rutas.asignaturas.unshift(nomas);
     storage.set('rutas', rutas, function(error) {
       if (error) console.log(error);
     });

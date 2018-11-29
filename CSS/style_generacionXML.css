@@ -84,7 +84,7 @@ i {
 /*Contenido*/
 .main {
     margin-left: 180px; /* Same as the width of the sidenav */
-    font-size: 25px; /* Increased text to enable scrolling */
+    font-size: 22px; /* Increased text to enable scrolling */
 }
 h1{
     color: #eceff1;
@@ -92,43 +92,49 @@ h1{
     /*color: #cfd8dc;*/
 }
 #archivero{
-	height: 78%;
-	padding-top: 30px;
+	height: 79%;
+	padding-top: 20px;
 	background: rgba(238,238,238,0.9);
     overflow-y: scroll;
 }
+#institucion{
+    margin-left: 12%;
+    margin-right: 3%;
+    width: 40%;
+    text-align: left;
+    display: inline-block;
+    float: left;
+}
+#responsable{
+    width: 40%;
+    text-align: left;
+    display: inline-block;
+}
+ul li{
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+input{
+    font-size: 18px;
+    padding-left: 5px;
+}
 #archivero h2{
     font-size: 28px;
-    margin-top: 3%;
-    margin-left: 26%;
 }
-#archivero ol{
-	margin-left: 28%;
-}
-#fileInputCSV{
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
-}
-#labelin{
+#alumnos{
     font-size: 22px;
     width: 45%;
     color: #f0f0f0;
     background: #263238;
     display: inline-block;
     cursor: pointer;
-    padding-top: 15px;
-    padding-bottom: 15px;
     border-radius: 5px;
 }
-#labelin:hover{
-	background: #37474f;
-	cursor: pointer;
+#alumnos option{
+    text-align: center;
+    padding: 50px;
 }
-#fileExport{
+#generar{
     font-size: 22px;
     width: 45%;
     color: #f0f0f0;
@@ -140,11 +146,18 @@ h1{
     border-radius: 5px;
     margin-top: 10px;
 }
+#archivero a{
+    position: absolute;
+    left: 215px;
+    top: 14%;
+    color: #37474f;
+}
 table{
     margin-bottom: 30px;
+    border: 1px solid #37474f;
 }
 table, th, td {
-    border: 1px solid #0f0f0f;
+    border-bottom: 1px solid #37474f;
     border-collapse: collapse;
     padding: 5px;
 }
@@ -153,7 +166,7 @@ th, td {
     padding: 5px;
 }
 th{
-    background: #3c719c;
+    background: #37474f;
     color: #f0f0f0;
 }
 td{
