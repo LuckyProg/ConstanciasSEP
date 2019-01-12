@@ -136,7 +136,7 @@ function agregarAsignaturas(){
     storage.set('rutas', rutas, function(error) {
       if (error) console.log(error);
     });
-    var content = ' , , , , , , , , , ';
+    var content = 'idAsignatura,ciclo,calificacion,idObservaciones\n'+' , , , ';
     fs.writeFileSync(rutas.csvAsignaturas+'/'+nomas+'.csv', content, 'utf-8');
     location.replace("gestion.html");
 

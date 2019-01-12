@@ -224,8 +224,7 @@ var options = {"include": true, "version": "1.0", "encoding": "utf-8", "standalo
 function generar(x){
 
     try{
-     
-        console.log(x);
+
         var obj = {
 
             "@": {
@@ -291,38 +290,46 @@ function generar(x){
                     "promedio":"#"
                 },
                 "Asignatura": [
-                    {
-                        "@": {
-                            "idAsignatura": "#",
-                            "ciclo": "2012-4",
-                            "calificacion": "#",
-                            "idObservaciones": "#"
-                        }
-                    },
-                    {
-                        "@": {
-                            "idAsignatura": "#",
-                            "ciclo": "2012-4",
-                            "calificacion": "#",
-                            "idObservaciones": "#"
-                        }
-                    },
-                    {
-                        "@": {
-                            "idAsignatura": "#",
-                            "ciclo": "2012-4",
-                            "calificacion": "#",
-                            "idObservaciones": "#"
-                        }
-                    }
+                    
                 ]
             }
 
         };
 
-        content = js2xmlparser.parse("Dec", obj, {declaration: {encoding: 'utf-8', standalone: 'yes'}});
-        console.log(content);
-        guardar(x);
+        var asigns;
+        var asign;
+
+        var fullPath = document.getElementById('fileInput'+x).value;
+        if (fullPath) {
+            var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+            var filename = fullPath.substring(startIndex);
+            if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+                filename = filename.substring(1);
+            }
+            csv()
+            .fromFile(rutas.csvAsignaturas+"/"+filename)
+            .then((jsonObj)=>{
+                asigns = jsonObj;
+                var i;
+                for(i=0;i<asigns.length;i++){
+
+                    asign = {
+                        "@": {
+                            "idAsignatura": asigns[i].idAsignatura,
+                            "ciclo": asigns[i].ciclo,
+                            "calificacion": asigns[i].calificacion,
+                            "idObservaciones": asigns[i].idObservaciones
+                        }
+                    };
+
+                      obj.Asignaturas.Asignatura.push(asign);
+                }
+
+                content = js2xmlparser.parse("Dec", obj, {declaration: {encoding: 'utf-8', standalone: 'yes'}});
+                console.log(content);
+                guardar(x);
+            });
+        }
         
     }catch(e){
         console.log('Failed to save the file ! '+e); 
