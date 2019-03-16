@@ -9,7 +9,7 @@
 }
 html, body {margin: 0; height: 100%; overflow: hidden}
 body{
-	background: #3c719c;
+    background: #4a609d;
 }
 /*Menu*/
 .sidenav {
@@ -77,6 +77,12 @@ body{
 .sidenav #d:hover{
 	background: linear-gradient(to right, #f57f17, #37474f);
 }
+.sidenav #e{
+    border-left: 3px solid #4a609d;
+}
+.sidenav #e:hover{
+    background: linear-gradient(to right, #4a609d, #37474f);
+}
 i {
     height: 27px;
     vertical-align: middle;
@@ -90,6 +96,15 @@ h1{
     color: #eceff1;
     font-size: 30px;
     /*color: #cfd8dc;*/
+    display: inline-block;
+    margin-left: 180px;
+}
+img{
+    display: inline-block;
+    width: 10%;
+    align-self: right;
+    margin-right: 50px;
+    margin-top: -10px;
 }
 #archivero{
 	height: 79%;

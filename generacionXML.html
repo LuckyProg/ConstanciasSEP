@@ -16,16 +16,18 @@
 		<div class="sidenav">
 
 		  <a href="gestion.html" id="a"><i class="material-icons">library_books</i>&nbsp;Gestion de archivos</a>
-		  <a href="#" id="b" class="actual"><i class="material-icons">insert_drive_file</i>&nbsp;Certificados</a>
-		  <a href="#clients" id="c"><i class="material-icons">edit</i>&nbsp;Firma electrónica</a>
+		  <a href="asignaturas.html" id="a"><i class="material-icons">library_books</i>&nbsp;Asignaturas</a>
+		  <a href="#" id="b" class="actual"><i class="material-icons">insert_drive_file</i>&nbsp;Certificados/Titulos</a>
+		  <a href="generacionPDF.html" id="c"><i class="material-icons">edit</i>&nbsp;Generador de PDF</a>
 		  <a href="configuracion.html" id="d"><i class="material-icons">settings</i>&nbsp;Configuracion</a>
+		  <a href="index.html" id="e"><i class="material-icons">keyboard_return</i>&nbsp;Salir</a>
 		
 		</div>
 
 		<div class="main">
 
 			<br/>
-			<center><h1>Generador de Certificados</h1></center>
+			<center><h1>Generador de Certificados</h1><img src="IMG/logofull_bw.png" align="right"></center>
 			<br/>
 			<div id="archivero">
 				<div id="institucion">
@@ -41,6 +43,8 @@
 					  	<input type="text" id="idEntidadFederativa" onchange="actualizar('idEntidadFederativa', true);"/></li>
 					  <li>- ID Lugar de expedicion: 
 					  	<input type="text" id="idLugarExpedicion" onchange="actualizar('idLugarExpedicion', true);"/></li>
+					  <li>- Número de RVOE: 
+					  	<input type="text" id="noRvoe"/></li>
 					</ul>
 				</div>
 				<div id="responsable">

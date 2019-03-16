@@ -1,0 +1,70 @@
+<html>
+
+	<head>
+
+		<link rel="stylesheet" type="text/css" href="CSS/style_generacionXML.css">
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	    <meta charset="UTF-8">
+
+	</head>
+
+	<body>
+
+		<div class="sidenav">
+
+		  <a href="gestion.html" id="a"><i class="material-icons">library_books</i>&nbsp;Gestion de archivos</a>
+		  <a href="asignaturas.html" id="a"><i class="material-icons">library_books</i>&nbsp;Asignaturas</a>
+		  <a href="generacionXML.html" id="b"><i class="material-icons">insert_drive_file</i>&nbsp;Certificados/Titulos</a>
+		  <a href="#" id="c" class="actual"><i class="material-icons">edit</i>&nbsp;Generador de PDF</a>
+		  <a href="configuracion.html" id="d"><i class="material-icons">settings</i>&nbsp;Configuracion</a>
+		  <a href="index.html" id="e"><i class="material-icons">keyboard_return</i>&nbsp;Salir</a>
+		
+		</div>
+
+		<div class="main">
+
+			<br/>
+			<center><h1>Generador de PDF</h1><img src="IMG/logofull_bw.png" align="right"></center>
+			<br/>
+			<div id="archivero">
+				<div id="institucion">
+					<br/>
+					<h2>Informacion de la Institucion:</h2>
+					<br/>
+					<ul>
+					  <li>- Nombre institucion: 
+					  	<input type="text" id="NombreInstitucion" onchange="actualizar('NombreInstitucion', true);"/></li>
+					  <li>- Lugar de expedicion: 
+					  	<input type="text" id="LugarExpedicion" onchange="actualizar('LugarExpedicion', true);"/></li>
+					</ul>
+				</div>
+				<div id="responsable">
+					<br/>
+					<h2>Responsable:</h2>
+					<br/> 
+					<ul>
+					  <li>- Nombre Completo: 
+					  	<input type="text" id="nombre" onchange="actualizar('nombre', false);"/></li>
+					  <li>- Cargo: 
+					  	<input type="text" id="Cargo" onchange="actualizar('Cargo', false);"/></li>
+					</ul> 
+				</div>
+				<br/><br/><br/><br>
+		        <center>
+		        	<select id="alumnos"></select>
+		        </center>
+		        <center><button id="generar" onclick="leer();" disabled><i class="material-icons">highlight_off</i>&nbsp;Archivo no seleccionado</button></center>
+
+	        </div>
+
+			<h3>Copyright 2015 - 2018 Loyalty Consultores Jurídicos</h3>
+		</div>
+
+		<script type="text/javascript" src="JS/pdfs.js"></script>
+
+	</body>
+
+</html>

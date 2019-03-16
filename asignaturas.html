@@ -1,0 +1,56 @@
+<head>
+
+		<link rel="stylesheet" type="text/css" href="CSS/style_gestion.css">
+	    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	    <meta charset="UTF-8">
+
+	</head>
+
+	<body>
+
+		<div class="sidenav">
+
+		  <a href="gestion.html" id="a"><i class="material-icons">library_books</i>&nbsp;Gestion de Archivos</a>
+		  <a href="#" id="a" class="actual"><i class="material-icons">library_books</i>&nbsp;Asignaturas</a>
+		  <a href="generacionXML.html" id="b"><i class="material-icons">insert_drive_file</i>&nbsp;Certificados/Titulos</a>
+		  <a href="generacionPDF.html" id="c"><i class="material-icons">edit</i>&nbsp;Generador de PDF</a>
+		  <a href="configuracion.html" id="d"><i class="material-icons">settings</i>&nbsp;Configuracion</a>
+		  <a href="index.html" id="e"><i class="material-icons">keyboard_return</i>&nbsp;Salir</a>
+
+		</div>
+
+		<div class="main">
+
+			<br/>
+			<center><h1>Carreras/Asignaturas</h1><img src="IMG/logofull_bw.png" align="right"></center>
+			<br/>
+			<div id="archivero">
+
+				<div id="asignaturas">
+					<input type="text" id="busasig" onkeyup="buscarAsignaturas();" placeholder="Buscar.." class="barra">
+					<table id="tableAsig">
+					  	
+					</table>
+				</div>
+
+				<div id="alumnos">
+					<input type="text" id="busCarrera" onkeyup="buscarCarrera();" placeholder="Buscar.." class="barra" style="margin-left: 16%;">
+					<table id="tableCarreras" style="margin-left: 16%;">
+					  	
+					</table>
+				</div>
+
+			</div>
+
+			<h3>Copyright 2015 - 2018 Loyalty Consultores Jurídicos</h3>
+
+		</div>
+
+		<script type="text/javascript" src="JS/carreras.js"></script>
+
+	</body>
+
+</html>

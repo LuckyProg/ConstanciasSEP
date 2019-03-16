@@ -8,13 +8,38 @@
 		
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	    <meta charset="UTF-8">
-	    <meta http-equiv="refresh" content="0; url=gestion.html">
 
 	</head>
 
 	<body>
 
-		
+		<center>
+
+			<img src="IMG/logofull_bw.png">
+
+			<br/>
+
+			<form action="gestion.html">
+				<h1>Acceso de usuarios</h1>
+				<br/>
+				<input type="text" name="user" id="user" placeholder="Usuario">
+				<input type="password" name="pass" id="pass" placeholder="Contraseña">
+				<button type="submit" onclick="acceso();">Ingresar</button>
+			</form>
+
+		</center>
+
+		<script type="text/javascript">
+			function acceso(){
+				var user = document.getElementById("user").value;
+				var pass = document.getElementById("pass").value;
+				if(user=="admin" && pass=="123"){
+					window.location.assign("gestion.html");
+				}else{
+					alert("\nUsuario y/o Contraseña incorrectos.\n\nEn otro caso consulte su membresía.");
+				}
+			}
+		</script>
 
 	</body>
 

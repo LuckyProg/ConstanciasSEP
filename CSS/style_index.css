@@ -1,0 +1,72 @@
+
+body{
+	background: url("../IMG/bgblue.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	padding: 50px;
+}
+
+img{
+	width: 20%;
+	margin-top: 3%;
+}
+
+form{
+	background: rgba(250,250,250,.5);
+	width: 30%;
+	padding: 35px;
+	padding-top: 15px;
+	border-radius: 10px;
+	margin-top: 3%;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1{
+	font-family: 'Open Sans', sans-serif;
+	color: #24266a;
+}
+
+form input, button{
+	display: block;
+	margin-bottom: 5px;
+	width: 75%;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	padding: 3px;
+	border-radius: 5px;
+}
+
+form button{
+	margin-top: 20px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	background: #4a609d;
+	padding: 5px;
+	color: #f0f0f0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

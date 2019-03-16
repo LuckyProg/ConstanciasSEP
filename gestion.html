@@ -14,45 +14,45 @@
 	<body>
 
 		<div class="sidenav">
+
 		  <a href="#" id="a" class="actual"><i class="material-icons">library_books</i>&nbsp;Gestion de Archivos</a>
-		  <a href="generacionXML.html" id="b"><i class="material-icons">insert_drive_file</i>&nbsp;Certificados</a>
-		  <a href="#clients" id="c"><i class="material-icons">edit</i>&nbsp;Firma electrónica</a>
+		  <a href="asignaturas.html" id="a"><i class="material-icons">library_books</i>&nbsp;Asignaturas</a>
+		  <a href="generacionXML.html" id="b"><i class="material-icons">insert_drive_file</i>&nbsp;Certificados/Titulos</a>
+		  <a href="generacionPDF.html" id="c"><i class="material-icons">edit</i>&nbsp;Generador de PDF</a>
 		  <a href="configuracion.html" id="d"><i class="material-icons">settings</i>&nbsp;Configuracion</a>
+		  <a href="index.html" id="e"><i class="material-icons">keyboard_return</i>&nbsp;Salir</a>
+
 		</div>
 
 		<div class="main">
 
 			<br/>
-			<center><h1>Gestion de Archivos</h1></center>
+			<center><h1>Gestion de Archivos</h1><img src="IMG/logofull_bw.png" align="right"></center>
 			<br/>
 			<div id="archivero">
 
 				<div id="asignaturas">
 					<input type="text" id="busasig" onkeyup="buscarAsignaturas();" placeholder="Buscar.." class="barra">
 					<table id="tableAsig">
-					  	<tr class="header">
-					    	<th style="width:80%;"><i class="material-icons">list_alt</i>&nbsp;Asignaturas por Alumnos</th>
-					    	<th style="width:20%;"></th>
-					  	</tr>
-					  	<tr>
-					    	<td id="especial"><input type="text" id="nuevo" placeholder="Nuevo archivo"></td>
-					    	<td id="especial"><button id="agregar"><i class="material-icons">add</i>&nbsp;Agregar</button></td>
-					  	</tr>
+					  	
 					</table>
 				</div>
 
 				<div id="alumnos">
 					<input type="text" id="busalu" onkeyup="buscarAlumnos();" placeholder="Buscar.." class="barra" style="margin-left: 16%;">
 					<table id="tableAlum" style="margin-left: 16%;">
-					  	<tr class="header">
-					    	<th style="width:80%;"><i class="material-icons">person</i>&nbsp;Grupos</th>
-					    	<th style="width:20%;"></th>
-					  	</tr>
-					  	<tr>
-					    	<td id="especial"><input type="text" id="nuevo" placeholder="Nuevo archivo"></td>
-					    	<td id="especial"><button id="agregar"><i class="material-icons">add</i>&nbsp;Agregar</button></td>
-					  	</tr>
+					  	
 					</table>
+				</div>
+
+				<div id="myModal" class="modal">
+
+				  <!-- Modal content -->
+				  <div class="modal-content" id="Mcontent">
+				    <span class="close">&times;</span>
+				    <h2>Seleccionar asignaturas del alumno:</h2>
+				  </div>
+
 				</div>
 
 			</div>

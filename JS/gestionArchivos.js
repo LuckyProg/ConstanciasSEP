@@ -9,6 +9,7 @@ var rutas;
 var csvAlumnos;
 var csvAsignaturas;
 var xml;
+var carreras;
   
 storage.has('rutas', function(error, hasKey) {
   if (error) console.log(error);
@@ -43,8 +44,7 @@ storage.get('rutas', function(error, data) {
 
         document.getElementById('tableAlum').innerHTML = 
         "<tr class='header'>"+
-            "<th style='width:60%;'>Archivos Alumnos</th>"+
-            "<th style='width:40%;'></th>"+
+            "<th colspan='2'>Datos de alumnos</th>"+
         "</tr>"+
         "<tr>"+
             "<td id='especial'><input type='text' id='nuevoAlum' placeholder='Nuevo archivo'></td>"+
@@ -65,12 +65,11 @@ storage.get('rutas', function(error, data) {
 
         document.getElementById('tableAsig').innerHTML = 
         "<tr class='header'>"+
-            "<th style='width:60%;'>Archivos Asignaturas</th>"+
-            "<th style='width:40%;'></th>"+
+            "<th colspan='2'>Asignaturas de alumnos</th>"+
         "</tr>"+
         "<tr>"+
             "<td id='especial'><input type='text' id='nuevaAsig' placeholder='Nuevo archivo'></td>"+
-            "<td id='especial'><button id='agregar' onclick='agregarAsignaturas();'><i class='material-icons'>add</i></button></td>"+
+            "<td id='especial'><button id='agregar' onclick='showModal();'><i class='material-icons'>add</i></button></td>"+
         "</tr>"+archasig;
 
     }
@@ -129,6 +128,39 @@ function buscarAlumnos() {
 
 }
 
+storage.has('carreras', function(error, hasKey) {
+  if (error) console.log(error);
+ 
+  if (hasKey) {
+    console.log('There is data stored as `carreras`');
+  }else{
+    storage.set('carreras', { carrera:[{nombre: '', id:''}], asignatura:[{nombre: '', id:''}] }, function(error) {
+      if (error) console.log(error);
+    });
+  }
+
+});
+
+storage.get('carreras', function(error, data) {
+    if (error) console.log(error);
+    else{
+        carreras = data;
+        var x;
+
+        var datosAsig = "";
+        for(x=0; x<carreras.asignatura.length; x++){
+
+            datosAsig = datosAsig + 
+            "<li><input type='checkbox' id='"+x+"'>&nbsp;"+carreras.asignatura[x].nombre+"</li>"
+
+        }
+        document.getElementById('Mcontent').innerHTML = 
+        "<span class='close'>&times;</span><h4>Seleccionar asignaturas del alumno:</h4>"+
+        "<ul>"+datosAsig+"</ul>"+
+        "<button onclick='agregarAsignaturas();'>Agregar</button>";
+    }
+});
+
 function agregarAsignaturas(){
 
     var nomas = document.getElementById('nuevaAsig').value;
@@ -136,7 +168,12 @@ function agregarAsignaturas(){
     storage.set('rutas', rutas, function(error) {
       if (error) console.log(error);
     });
-    var content = 'idAsignatura,ciclo,calificacion,idObservaciones\n'+' , , , ';
+    var content = 'nombreAsignatura,idAsignatura,ciclo,calificacion,idObservaciones\n';
+    var x;
+    for(x = 0; x < carreras.asignatura.length; x++){
+        if(document.getElementById(''+x+'').checked) 
+            content = content+carreras.asignatura[x].nombre+','+carreras.asignatura[x].id+',,,\n';
+    }
     fs.writeFileSync(rutas.csvAsignaturas+'/'+nomas+'.csv', content, 'utf-8');
     location.replace("gestion.html");
 
@@ -181,6 +218,23 @@ function buscarAsignaturas() {
 
 }
 
+var modal = document.getElementById('myModal');
+
+var span = document.getElementsByClassName("close")[0];
+
+function showModal() {
+    modal.style.display = 'block';
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
 
 
